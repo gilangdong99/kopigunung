@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kopi Nusantara</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <h1>GUNUNG KOPI</h1>
+  <ul class="nav-links">
+    <li><a href="#home">Beranda</a></li>
+    <li><a href="#produk">Produk</a></li>
+    <li><a href="#tentang">Tentang Kami</a></li>
+    <li><button class="cart-toggle">Keranjang <span id="cart-count">0</span></button></li>
+    <li><button id="darkModeToggle">🌙</button></li>
+  </ul>
+</nav>
+
+<!-- HERO SLIDER -->
+<section class="hero" id="home">
+  <div class="hero-slider">
+    <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1511920170033-f8396924c348');"></div>
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1509042239860-f550ce710b93');"></div>
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1510626176961-4b2c9f4f7fc1');"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h2>Selamat Datang di Gunung Kopi</h2>
+    <p>Kami menyajikan kopi premium dari seluruh Nusantara</p>
+    <a href="#produk" class="btn-hero">Lihat Produk</a>
+  </div>
+</section>
+
+<!-- PRODUK -->
+<section id="produk" class="produk-section">
+  <h2>Produk Kami</h2>
+  <div id="product-list" class="product-grid"></div>
+</section>
+
+<!-- TENTANG KAMI -->
+<section id="tentang" class="about-section">
+  <h2>Tentang Kami</h2>
+  <p>Gunung Kopi menyediakan kopi premium langsung dari petani lokal dengan kualitas terbaik.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-container">
+    <p>© 2026 Gunung Kopi</p>
+    <div class="socials">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/2111/2111463.png" alt="Instagram"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/1384/1384063.png" alt="Twitter"></a>
+    </div>
+    <p>Kontak: gunungkopi26@gmail.com | +62 858-0725-4751</p>
+  </div>
+</footer>
+
+<!-- SIDEBAR KERANJANG -->
+<div id="cartSidebar" class="cart-sidebar">
+  <div class="cart-header">
+    <h2>Keranjang Belanja</h2>
+    <button class="cart-close">&times;</button>
+  </div>
+  <div id="cartItems" class="cart-items">Keranjang kosong</div>
+  <div class="cart-footer">
+    <p>Total: Rp <span id="total">0</span></p>
+    <div class="checkout-buttons">
+      <button class="checkout-btn" onclick="openCheckoutModal()">Checkout</button>
+    </div>
+  </div>
+</div>
+
+<!-- OVERLAY BLUR -->
+<div id="overlay" class="overlay"></div>
+
+<!-- MODAL CHECKOUT -->
+<div id="checkoutModal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h2>Checkout Pesanan</h2>
+    <form id="checkoutForm">
+      <label>Nama:</label>
+      <input type="text" name="nama" required>
+      <label>Nomor HP:</label>
+      <input type="text" name="hp" required placeholder="contoh: 81234567890">
+      <label>Email:</label>
+      <input type="email" name="email">
+      <label>Alamat:</label>
+      <textarea name="alamat" required></textarea>
+      <div class="modal-buttons">
+        <button type="submit" class="btn-submit">Kirim via WhatsApp</button>
+        <button type="button" class="btn-submit" id="emailBtn">Kirim via Email</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
